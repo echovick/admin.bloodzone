@@ -16,6 +16,10 @@ class CenterController extends Controller
         return view('center.create');
     }
 
+    public function show(){
+        return view('center.show');
+    }
+
     public function store(){
         $data = request()->validate([
             'c_id' => '',

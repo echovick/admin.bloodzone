@@ -16,6 +16,10 @@ class UserController extends Controller
         return view('admin.create');
     }
 
+    public function show(){
+        return view('admin.show');
+    }
+
     public function store(){
         $data = request()->validate([
             'admin_id' => '',

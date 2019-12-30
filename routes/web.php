@@ -18,9 +18,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//STORE ROUTES
 Route::post('/c', 'CenterController@store');
 Route::post('/u', 'UserController@store');
+
+//CREATE ROUTES
 Route::get('/c/register', 'CenterController@create');
 Route::get('/u/register', 'UserController@create');
+
+//SHOW ROUTES
+Route::get('/centers', 'CenterController@show');
+Route::get('/admins', 'UserController@show');
+Route::get('/appointments', 'AppointmentController@show');
+Route::get('/bloodbags', 'BloodBagController@show');
+Route::get('/donations', 'DonationController@show');
+Route::get('/donors', 'DonorController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');

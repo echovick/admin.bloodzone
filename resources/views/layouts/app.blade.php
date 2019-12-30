@@ -45,8 +45,8 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="\home" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
+                    <i class="fas fa-fw fa-home"></i>
+                    <span>Home</span>
                 </a>
             </li>
             <hr class="sidebar-divider">
@@ -62,7 +62,7 @@
                 </a>
                 <a class="nav-link" href="\c\register" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-plus fa-cog"></i>
-                    <span>New Hospital</span>
+                    <span>New Center</span>
                 </a>
             </li>
             <!-- Divider -->
@@ -84,22 +84,6 @@
                 <a class="nav-link" href="#" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-list fa-cog"></i>
                     <span>Manage Appointments</span>
-                </a>
-                <a class="nav-link" href="#" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-question fa-cog"></i>
-                    <span>Manage Requests</span>
-                </a>
-                <a class="nav-link" href="#" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-store fa-cog"></i>
-                    <span>Hospital Inventory</span>
-                </a>
-                <a class="nav-link" href="#" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-store fa-cog"></i>
-                    <span>General Inventory</span>
-                </a>
-                <a class="nav-link" href="#" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-hospital fa-cog"></i>
-                    <span>BloodZone Hospitals</span>
                 </a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
