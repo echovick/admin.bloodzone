@@ -30,7 +30,6 @@
                         <div class="card">
                             <div class="card-header font-weight-bold" style="text-align:center;">
                                 {{ __('Bloodzone Admin Login') }}
-                                <a href="{{ route('register') }}">Register</a>
                             </div>
                             @if (Auth::user())
                             <div class="card-body">

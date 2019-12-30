@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2019 at 11:42 AM
+-- Generation Time: Dec 30, 2019 at 01:32 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -21,30 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `bloodzone_db`
 --
-CREATE DATABASE IF NOT EXISTS `bloodzone_db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bloodzone_db`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admins`
---
-
-CREATE TABLE `admins` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `admin_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date_of_birth` date NOT NULL,
-  `gender` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -96,7 +72,7 @@ CREATE TABLE `centers` (
   `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `landmark` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `license` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending Verification',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -226,9 +202,9 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_100000_create_password_resets_table', 1),
-(2, '2019_08_19_000000_create_failed_jobs_table', 1),
-(3, '2019_12_24_122801_create_admins_table', 1),
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_24_130428_create_centers_table', 1),
 (5, '2019_12_24_131235_create_lab_scientists_table', 1),
 (6, '2019_12_24_132322_create_donors_table', 1),
@@ -334,18 +310,39 @@ CREATE TABLE `transfusions` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `admin_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `gender` char(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `admin_id`, `first_name`, `last_name`, `date_of_birth`, `gender`, `email`, `phone`, `password`, `address`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'ADMIN1901', 'Uchechukwu', 'Eze', '1998-02-08', 'M', 'uchechukwueze70@gmail.com', '08131117279', '$2y$10$us.IAoiUaiPV2AgwYAJx9.8fdcAt1pKxc6ynkMm9NcJsc6j.198Fy', 'madonna university, nigeria, federal capital territory, nigeria', NULL, '2019-12-29 11:13:35', '2019-12-29 11:13:35'),
+(2, 'ADMIN192', 'Uchechukwu', 'Eze', '1998-02-08', 'M', 'uchechukwueze71@gmail.com', '08131117279', '$2y$10$MBYkjFQzvKDMaIomaFpb5OtIx8Wj.FpNCIZkfU/Uj6SXT7m9rwJzq', 'madonna university, nigeria, federal capital territory, nigeria', NULL, '2019-12-29 13:18:10', '2019-12-29 13:18:10');
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admins_id_unique` (`id`),
-  ADD UNIQUE KEY `admins_admin_id_unique` (`admin_id`),
-  ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
 -- Indexes for table `appointments`
@@ -470,14 +467,17 @@ ALTER TABLE `transfusions`
   ADD KEY `transfusions_ls_id_index` (`ls_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `users`
 --
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_id_unique` (`id`),
+  ADD UNIQUE KEY `users_admin_id_unique` (`admin_id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `donor_profiles`
@@ -502,6 +502,12 @@ ALTER TABLE `global_inventories`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
