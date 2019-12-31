@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2019 at 01:32 AM
+-- Generation Time: Dec 31, 2019 at 02:23 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -73,9 +73,17 @@ CREATE TABLE `centers` (
   `landmark` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `license` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending Verification',
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `centers`
+--
+
+INSERT INTO `centers` (`c_id`, `name`, `address`, `phone_1`, `phone_2`, `email`, `state`, `city`, `landmark`, `license`, `status`, `password`, `created_at`, `updated_at`) VALUES
+('CE191', 'Daughters Of charity', 'madonna university, nigeria, federal capital territory, nigeria', '08192827362', '09028372736', 'uchechukwueze70@gmail.com', 'Enugu', 'Enugu', 'None', 'uploads\\licenses/63huXt73DY3GGf5ynwsV8hjApTzwK3Vt4eXuYmSc.jpeg', '', '$2y$10$ujyo2NqDBx4zKWSohxe08eFoaY.kMjIJJ8wtjbiDeo6FBPAZYZehO', '2019-12-31 12:20:28', '2019-12-31 12:20:28');
 
 -- --------------------------------------------------------
 
@@ -337,8 +345,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `admin_id`, `first_name`, `last_name`, `date_of_birth`, `gender`, `email`, `phone`, `password`, `address`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'ADMIN1901', 'Uchechukwu', 'Eze', '1998-02-08', 'M', 'uchechukwueze70@gmail.com', '08131117279', '$2y$10$us.IAoiUaiPV2AgwYAJx9.8fdcAt1pKxc6ynkMm9NcJsc6j.198Fy', 'madonna university, nigeria, federal capital territory, nigeria', NULL, '2019-12-29 11:13:35', '2019-12-29 11:13:35'),
-(2, 'ADMIN192', 'Uchechukwu', 'Eze', '1998-02-08', 'M', 'uchechukwueze71@gmail.com', '08131117279', '$2y$10$MBYkjFQzvKDMaIomaFpb5OtIx8Wj.FpNCIZkfU/Uj6SXT7m9rwJzq', 'madonna university, nigeria, federal capital territory, nigeria', NULL, '2019-12-29 13:18:10', '2019-12-29 13:18:10');
+(1, 'ADMIN191', 'Uchechukwu', 'Eze', '2019-12-17', 'M', 'Uchechukwueze70@gmail.com', '08131117279', '$2y$10$us.IAoiUaiPV2AgwYAJx9.8fdcAt1pKxc6ynkMm9NcJsc6j.198Fy', 'Phase 4, kubwa', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -507,7 +514,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

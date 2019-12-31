@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CenterController extends Controller
 {
@@ -33,6 +34,7 @@ class CenterController extends Controller
             'landmark' => ['required', 'string'],
             'license' => ['required', 'image'],
             'status' => '',
+            'password' => ['required', 'string'],
         ]);
 
         $imagePath = request('license')->store('uploads\licenses', 'public');
@@ -51,6 +53,7 @@ class CenterController extends Controller
             'landmark' => $data['landmark'],
             'license' => $imagePath,
             'status' => '',
+            'password' =>Hash::make($data['password']),
         ]);
         
         return redirect('/c/register');
