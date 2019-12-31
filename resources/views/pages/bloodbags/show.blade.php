@@ -25,7 +25,7 @@
                     <div class="d-flex">
                         <div style="font-size:11px;">
                             <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag ID</b>: BB1901 <br>
+                                <b>BloodBag</b>: BB1901 <br>
                                 <b>Type</b>: Blood <br>
                                 <b>Quantity (cc)</b>: 546 <br>
                                 <b>Expires</b>: 21-03-2020 <br>
@@ -49,7 +49,7 @@
                     <div class="d-flex">
                         <div style="font-size:11px;">
                             <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag ID</b>: BB1901 <br>
+                                <b>BloodBag</b>: BB1901 <br>
                                 <b>Type</b>: Blood <br>
                                 <b>Quantity (cc)</b>: 546 <br>
                                 <b>Expires</b>: 21-03-2020 <br>
@@ -73,7 +73,7 @@
                     <div class="d-flex">
                         <div style="font-size:11px;">
                             <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag ID</b>: BB1901 <br>
+                                <b>BloodBag</b>: BB1901 <br>
                                 <b>Type</b>: Blood <br>
                                 <b>Quantity (cc)</b>: 546 <br>
                                 <b>Expires</b>: 21-03-2020 <br>
@@ -97,7 +97,7 @@
                     <div class="d-flex">
                         <div style="font-size:11px;">
                             <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag ID</b>: BB1901 <br>
+                                <b>BloodBag</b>: BB1901 <br>
                                 <b>Type</b>: Blood <br>
                                 <b>Quantity (cc)</b>: 546 <br>
                                 <b>Expires</b>: 21-03-2020 <br>
@@ -121,7 +121,7 @@
                     <div class="d-flex">
                         <div style="font-size:11px;">
                             <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag ID</b>: BB1901 <br>
+                                <b>BloodBag</b>: BB1901 <br>
                                 <b>Type</b>: Blood <br>
                                 <b>Quantity (cc)</b>: 546 <br>
                                 <b>Expires</b>: 21-03-2020 <br>
@@ -145,7 +145,7 @@
                     <div class="d-flex">
                         <div style="font-size:11px;">
                             <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag ID</b>: BB1901 <br>
+                                <b>BloodBag</b>: BB1901 <br>
                                 <b>Type</b>: Blood <br>
                                 <b>Quantity (cc)</b>: 546 <br>
                                 <b>Expires</b>: 21-03-2020 <br>
@@ -169,7 +169,7 @@
                     <div class="d-flex">
                         <div style="font-size:11px;">
                             <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag ID</b>: BB1901 <br>
+                                <b>BloodBag</b>: BB1901 <br>
                                 <b>Type</b>: Blood <br>
                                 <b>Quantity (cc)</b>: 546 <br>
                                 <b>Expires</b>: 21-03-2020 <br>
