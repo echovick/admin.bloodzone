@@ -26,6 +26,7 @@ class CreateCentersTable extends Migration
             $table->string('license');
             $table->string('status')->default('Pending Verification');
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
 
             $table->primary('c_id');

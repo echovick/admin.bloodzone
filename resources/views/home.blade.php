@@ -195,7 +195,7 @@
                         </div>
                     </div>
                     <hr>
-                    <button class="btn btn-sm btn-block btn-danger">Open</button>
+                    <a href="/inventory" class="btn btn-sm btn-block btn-danger">Open</a>
                 </div>
             </div>
         </div>

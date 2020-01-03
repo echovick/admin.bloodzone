@@ -33,5 +33,6 @@ Route::get('/appointments', 'AppointmentController@show');
 Route::get('/bloodbags', 'BloodBagController@show');
 Route::get('/donations', 'DonationController@show');
 Route::get('/donors', 'DonorController@show');
+Route::get('/inventory', 'InventoryController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');
