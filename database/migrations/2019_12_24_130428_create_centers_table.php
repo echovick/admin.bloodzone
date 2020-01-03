@@ -14,6 +14,7 @@ class CreateCentersTable extends Migration
     public function up()
     {
         Schema::create('centers', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('c_id')->unique();
             $table->string('name');
             $table->string('address');
@@ -29,7 +30,7 @@ class CreateCentersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->primary('c_id');
+            // $table->primary('c_id');
         });
     }
 
