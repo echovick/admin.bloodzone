@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="icon" href="{{ asset('images/Bloodzoneicon.png') }}">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -21,13 +23,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="bg-dark">
+<body class="bg-secondary">
     <div id="app">
         <main class="py-4">
-            <div class="container mt-5">
+            <div class="container mt-2">
+                <div class="row justify-content-center mb-5">
+                    <img src="{{ asset('images/logo/bloodzone_logo01.png') }}" alt="bloodzone logo" style="width:15%;">
+                </div>
                 <div class="row justify-content-center">
                     <div class="col-md-5">
-                        <div class="card">
+                        <div class="card shadow">
                             <div class="card-header font-weight-bold" style="text-align:center;">
                                 {{ __('Bloodzone Admin Login') }}
                             </div>
