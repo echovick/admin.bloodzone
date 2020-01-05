@@ -220,10 +220,10 @@
                     <hr>
                     <div class="d-flex">
                         <div class="col-11" style="margin-left:-8px;">
-                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                            <a href="/labscientists" class="btn btn-sm btn-block btn-danger">Open</a>
                         </div>
                         <div class="row">
-                            <a href="\labscientist\register" class="btn btn-sm btn-danger ml-1"><i
+                            <a href="/labscientist/register" class="btn btn-sm btn-danger ml-1"><i
                                     class="fas fa-plus"></i></a>
                         </div>
                     </div>
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                     <hr>
-                    <button class="btn btn-sm btn-block btn-danger">Open</button>
+                    <a href="/patients" class="btn btn-sm btn-block btn-danger">Open</a>
                 </div>
             </div>
         </div>
@@ -273,7 +273,7 @@
                         </div>
                     </div>
                     <hr>
-                    <button class="btn btn-sm btn-block btn-danger">Open</button>
+                    <a href="/preexams" class="btn btn-sm btn-block btn-danger">Open</a>
                 </div>
             </div>
         </div>
@@ -299,7 +299,7 @@
                         </div>
                     </div>
                     <hr>
-                    <button class="btn btn-sm btn-block btn-danger">Open</button>
+                    <a href="/transactions" class="btn btn-sm btn-block btn-danger">Open</a>
                 </div>
             </div>
         </div>
@@ -311,7 +311,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                Blood Transfusion
+                                Blood Transfusions
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 {{ \App\Transfusion::all()->count() }}
@@ -322,7 +322,7 @@
                         </div>
                     </div>
                     <hr>
-                    <button class="btn btn-sm btn-block btn-danger">Open</button>
+                    <a href="/transfusions" class="btn btn-sm btn-block btn-danger">Open</a>
                 </div>
             </div>
         </div>

@@ -34,5 +34,10 @@ Route::get('/bloodbags', 'BloodBagController@show');
 Route::get('/donations', 'DonationController@show');
 Route::get('/donors', 'DonorController@show');
 Route::get('/inventory', 'InventoryController@show');
+Route::get('/labscientists', 'LabScientistController@show');
+Route::get('/patients', 'PatientController@show');
+Route::get('/preexams', 'PreExamController@show');
+Route::get('/transactions', 'TransactionController@show');
+Route::get('/transfusions', 'TransfusionController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -8,172 +8,228 @@
     </div>
     @endif
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Blood Bags</h1>
+        <h1 class="h3 mb-0 text-gray-800">Inventory</h1>
     </div>
     <div class="row mb-4">
-        <div class="col-2 mb-3">
-            <div class="card shadow" style="width:150px; border-radius:30px;">
-                <div class="d-flex flex-content-justify p-4">
-                    <div>
-                        <i class="fa fa-tint text-danger" style="font-size:100px; text-align:center;"></i>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                A+
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                681 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-dark text-weight-bold">B+</h3>
-                    </div>
-                </div>
-                <div class="card-body" style="margin-top:-20px;">
+                    <hr>
                     <div class="d-flex">
-                        <div style="font-size:11px;">
-                            <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag</b>: BB1901 <br>
-                                <b>Type</b>: Blood <br>
-                                <b>Quantity (cc)</b>: 546 <br>
-                                <b>Expires</b>: 21-03-2020 <br>
-                            </a>
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2 mb-3">
-            <div class="card shadow" style="width:150px; border-radius:30px;">
-                <div class="d-flex flex-content-justify p-4">
-                    <div>
-                        <i class="fa fa-tint text-danger" style="font-size:100px; text-align:center;"></i>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                A-
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                310 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-dark text-weight-bold">B+</h3>
-                    </div>
-                </div>
-                <div class="card-body" style="margin-top:-20px;">
+                    <hr>
                     <div class="d-flex">
-                        <div style="font-size:11px;">
-                            <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag</b>: BB1901 <br>
-                                <b>Type</b>: Blood <br>
-                                <b>Quantity (cc)</b>: 546 <br>
-                                <b>Expires</b>: 21-03-2020 <br>
-                            </a>
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2 mb-3">
-            <div class="card shadow" style="width:150px; border-radius:30px;">
-                <div class="d-flex flex-content-justify p-4">
-                    <div>
-                        <i class="fa fa-tint text-danger" style="font-size:100px; text-align:center;"></i>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                B+
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                611 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-dark text-weight-bold">B+</h3>
-                    </div>
-                </div>
-                <div class="card-body" style="margin-top:-20px;">
+                    <hr>
                     <div class="d-flex">
-                        <div style="font-size:11px;">
-                            <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag</b>: BB1901 <br>
-                                <b>Type</b>: Blood <br>
-                                <b>Quantity (cc)</b>: 546 <br>
-                                <b>Expires</b>: 21-03-2020 <br>
-                            </a>
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2 mb-3">
-            <div class="card shadow" style="width:150px; border-radius:30px;">
-                <div class="d-flex flex-content-justify p-4">
-                    <div>
-                        <i class="fa fa-tint text-danger" style="font-size:100px; text-align:center;"></i>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                B-
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                727 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-dark text-weight-bold">B+</h3>
-                    </div>
-                </div>
-                <div class="card-body" style="margin-top:-20px;">
+                    <hr>
                     <div class="d-flex">
-                        <div style="font-size:11px;">
-                            <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag</b>: BB1901 <br>
-                                <b>Type</b>: Blood <br>
-                                <b>Quantity (cc)</b>: 546 <br>
-                                <b>Expires</b>: 21-03-2020 <br>
-                            </a>
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2 mb-3">
-            <div class="card shadow" style="width:150px; border-radius:30px;">
-                <div class="d-flex flex-content-justify p-4">
-                    <div>
-                        <i class="fa fa-tint text-danger" style="font-size:100px; text-align:center;"></i>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                AB-
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                379 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-dark text-weight-bold">B+</h3>
-                    </div>
-                </div>
-                <div class="card-body" style="margin-top:-20px;">
+                    <hr>
                     <div class="d-flex">
-                        <div style="font-size:11px;">
-                            <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag</b>: BB1901 <br>
-                                <b>Type</b>: Blood <br>
-                                <b>Quantity (cc)</b>: 546 <br>
-                                <b>Expires</b>: 21-03-2020 <br>
-                            </a>
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2 mb-3">
-            <div class="card shadow" style="width:150px; border-radius:30px;">
-                <div class="d-flex flex-content-justify p-4">
-                    <div>
-                        <i class="fa fa-tint text-danger" style="font-size:100px; text-align:center;"></i>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                AB+
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                480 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-dark text-weight-bold">B+</h3>
-                    </div>
-                </div>
-                <div class="card-body" style="margin-top:-20px;">
+                    <hr>
                     <div class="d-flex">
-                        <div style="font-size:11px;">
-                            <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag</b>: BB1901 <br>
-                                <b>Type</b>: Blood <br>
-                                <b>Quantity (cc)</b>: 546 <br>
-                                <b>Expires</b>: 21-03-2020 <br>
-                            </a>
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2 mb-3">
-            <div class="card shadow" style="width:150px; border-radius:30px;">
-                <div class="d-flex flex-content-justify p-4">
-                    <div>
-                        <i class="fa fa-tint text-danger" style="font-size:100px; text-align:center;"></i>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                O+
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                365 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-dark text-weight-bold">B+</h3>
+                    <hr>
+                    <div class="d-flex">
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="card-body" style="margin-top:-20px;">
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
+                                O-
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                747 Unit(s)
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-tint fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                    <hr>
                     <div class="d-flex">
-                        <div style="font-size:11px;">
-                            <a class="text-dark" href="#" style="text-decoration:none;">
-                                <b>BloodBag</b>: BB1901 <br>
-                                <b>Type</b>: Blood <br>
-                                <b>Quantity (cc)</b>: 546 <br>
-                                <b>Expires</b>: 21-03-2020 <br>
-                            </a>
+                        <div class="col-11" style="margin-left:-8px;">
+                            <a href="#" class="btn btn-sm btn-block btn-danger">Open</a>
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn btn-sm btn-danger ml-1"><i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
