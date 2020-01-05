@@ -30,7 +30,6 @@ class CreateCentersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            // $table->primary('c_id');
         });
     }
 

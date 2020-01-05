@@ -17,9 +17,9 @@ class CreateTransfusionsTable extends Migration
             $table->string('t_id')->unique();
             $table->string('p_id');
             $table->string('pe_id');
-            $table->string('c_id');
+            $table->unsignedBigInteger('c_id');
             $table->string('bb_id');
-            $table->string('ls_id');
+            $table->unsignedBigInteger('ls_id');
             $table->decimal('amount_recieved_cc', 5, 2);
             $table->date('transfusion_date');
             $table->timestamps();

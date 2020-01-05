@@ -16,9 +16,9 @@ class CreateDonationsTable extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->string('donation_id')->unique();
             $table->string('d_id');
-            $table->string('c_id');
+            $table->unsignedBigInteger('c_id');
             $table->string('pe_id');
-            $table->string('ls_id');
+            $table->unsignedBigInteger('ls_id');
             $table->string('bb_id');
             $table->decimal('amount_donated_cc', 5, 2);
             $table->date('donation_date');
