@@ -16,8 +16,8 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->string('transaction_id')->unique();
             $table->date('date_of_transaction');
-            $table->string('c_from');
-            $table->string('c_to');
+            $table->unsignedBigInteger('c_from');
+            $table->unsignedBigInteger('c_to');
             $table->string('blood_type');
             $table->integer('no_of_units');
             $table->decimal('unit_price', 8, 2);

@@ -14,8 +14,9 @@ class CreateLabScientistsTable extends Migration
     public function up()
     {
         Schema::create('lab_scientists', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('ls_id')->unique();
-            $table->string('c_id');
+            $table->unsignedBigInteger('center_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('date_of_birth');
@@ -24,10 +25,10 @@ class CreateLabScientistsTable extends Migration
             $table->string('phone');
             $table->string('password');
             $table->string('address');
+            $table->rememberToken();
             $table->timestamps();
 
-            $table->primary('ls_id');
-            $table->index('c_id');
+            $table->index('center_id');
         });
     }
 
