@@ -39,7 +39,7 @@
                     </div>
                     <div class="col-md-6">
                         {{ __('Phone Number') }}
-                        <input id="phone_1" type="text" class="form-control @error('phone_1') is-invalid @enderror"
+                        <input id="phone_1" type="number" class="form-control @error('phone_1') is-invalid @enderror"
                             name="phone_1" value="{{ old('phone_1') }}" required autocomplete="phone_1" autofocus>
 
                         @error('phone_1')
@@ -53,8 +53,8 @@
                 <div class="form-group row">
                     <div class="col-md-6">
                         {{ __('Phone 2 (Optional)') }}
-                        <input id="phone_2" type="text" class="form-control @error('phone_2') is-invalid @enderror"
-                            name="phone_2" value="{{ old('phone_2') }}" required autocomplete="phone_2" autofocus>
+                        <input id="phone_2" type="number" class="form-control @error('phone_2') is-invalid @enderror"
+                            name="phone_2" value="{{ old('phone_2') }}" autocomplete="phone_2" autofocus>
 
                         @error('phone_2')
                         <span class="invalid-feedback" role="alert">
@@ -104,7 +104,7 @@
                     <div class="col-md-6">
                         {{ __('Landmark') }}
                         <input id="landmark" type="text" class="form-control @error('landmark') is-invalid @enderror"
-                            name="landmark" value="{{ old('landmark') }}" required autocomplete="landmark" autofocus>
+                            name="landmark" value="{{ old('landmark') }}" autocomplete="landmark" autofocus>
 
                         @error('landmark')
                         <span class="invalid-feedback" role="alert">
@@ -126,21 +126,6 @@
                             </span>
                             @enderror
                         </div>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-md-12">
-                        {{ __('Password') }}
-                        <input id="password" type="password"
-                            class="form-control @error('password') is-invalid @enderror" name="password" required
-                            autocomplete="new-password">
-
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
                 </div>
 

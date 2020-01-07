@@ -27,11 +27,11 @@ class CenterController extends Controller
             'name' => ['required', 'string'],
             'address' => ['required', 'string'],
             'phone_1' => ['required', 'string'],
-            'phone_2' => ['string'],
+            'phone_2' => '',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:centers'],
             'state' => ['required', 'string'],
             'city' => ['required', 'string'],
-            'landmark' => ['string'],
+            'landmark' => '',
             'license' => ['required', 'image'],
             'status' => '',
         ]);
