@@ -27,14 +27,13 @@ class CenterController extends Controller
             'name' => ['required', 'string'],
             'address' => ['required', 'string'],
             'phone_1' => ['required', 'string'],
-            'phone_2' => ['required', 'string'],
+            'phone_2' => '',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:centers'],
             'state' => ['required', 'string'],
             'city' => ['required', 'string'],
-            'landmark' => ['required', 'string'],
+            'landmark' => '',
             'license' => ['required', 'image'],
             'status' => '',
-            'password' => ['required', 'string'],
         ]);
 
         $imagePath = request('license')->store('uploads\licenses', 'public');
@@ -53,7 +52,6 @@ class CenterController extends Controller
             'landmark' => $data['landmark'],
             'license' => $imagePath,
             'status' => '',
-            'password' =>Hash::make($data['password']),
         ]);
         
         return redirect('/c/register');
