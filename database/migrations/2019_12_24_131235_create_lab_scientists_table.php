@@ -17,6 +17,7 @@ class CreateLabScientistsTable extends Migration
             $table->bigIncrements('id');
             $table->string('ls_id')->unique();
             $table->unsignedBigInteger('center_id');
+            $table->unsignedBigInteger('lab_scientist_id')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('date_of_birth')->nullable();

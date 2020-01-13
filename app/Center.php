@@ -15,7 +15,7 @@ class Center extends Model
         static::created(
             function ($center)
             {
-                $lastId = \App\Center::count();
+                $lastId = \App\LabScientist::count();
                 $lastId++;
                 $center->labScientists()->create([
                     'ls_id' => 'LS'.date("y").$lastId,
