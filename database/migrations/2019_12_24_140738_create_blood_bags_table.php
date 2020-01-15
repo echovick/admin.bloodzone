@@ -14,6 +14,7 @@ class CreateBloodBagsTable extends Migration
     public function up()
     {
         Schema::create('blood_bags', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('bb_id')->unique();
             $table->string('donation_type');
             $table->decimal('quantity_cc', 5, 2);
@@ -21,7 +22,6 @@ class CreateBloodBagsTable extends Migration
             $table->date('expiry_date');
             $table->timestamps();
 
-            $table->primary('bb_id');
         });
     }
 

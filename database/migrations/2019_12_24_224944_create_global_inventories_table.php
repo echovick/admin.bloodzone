@@ -14,15 +14,15 @@ class CreateGlobalInventoriesTable extends Migration
     public function up()
     {
         Schema::create('global_inventories', function (Blueprint $table) {
-            $table->bigIncrements('id')->unique();
-            $table->string('bb_id');
-            $table->string('c_id');
+            $table->bigIncrements('id');
+            $table->string('blood_bag_id');
+            $table->string('center_id');
             $table->boolean('available');
             $table->decimal('price', 8, 2);
             $table->timestamps();
 
-            $table->index('bb_id');
-            $table->index('c_id');
+            $table->index('blood_bag_id');
+            $table->index('center_id');
         });
     }
 

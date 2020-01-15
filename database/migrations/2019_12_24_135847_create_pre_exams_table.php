@@ -14,6 +14,7 @@ class CreatePreExamsTable extends Migration
     public function up()
     {
         Schema::create('pre_exams', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('pe_id')->unique();
             $table->decimal('hemoglobin_gDl', 5, 2);
             $table->decimal('temperature_F', 5, 2);
@@ -28,7 +29,6 @@ class CreatePreExamsTable extends Migration
             $table->char('hiv',1);
             $table->timestamps();
 
-            $table->primary('pe_id');
         });
     }
 

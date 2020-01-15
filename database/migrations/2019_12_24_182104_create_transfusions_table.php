@@ -14,22 +14,22 @@ class CreateTransfusionsTable extends Migration
     public function up()
     {
         Schema::create('transfusions', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('t_id')->unique();
-            $table->string('p_id');
-            $table->string('pe_id');
-            $table->unsignedBigInteger('c_id');
-            $table->string('bb_id');
-            $table->unsignedBigInteger('ls_id');
+            $table->string('patient_id');
+            $table->string('pre_exam_id');
+            $table->unsignedBigInteger('center_id');
+            $table->string('blood_bag_id');
+            $table->unsignedBigInteger('lab_scientist_id');
             $table->decimal('amount_recieved_cc', 5, 2);
             $table->date('transfusion_date');
             $table->timestamps();
 
-            $table->primary('t_id');
-            $table->index('p_id');
-            $table->index('pe_id');
-            $table->index('c_id');
-            $table->index('bb_id');
-            $table->index('ls_id');
+            $table->index('patient_id');
+            $table->index('pre_exam_id');
+            $table->index('center_id');
+            $table->index('blood_bag_id');
+            $table->index('lab_scientist_id');
         });
     }
 

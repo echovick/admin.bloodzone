@@ -14,6 +14,7 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('transaction_id')->unique();
             $table->date('date_of_transaction');
             $table->unsignedBigInteger('c_from');
@@ -26,7 +27,6 @@ class CreateTransactionsTable extends Migration
             $table->string('delivery_status');
             $table->timestamps();
 
-            $table->primary('transaction_id');
             $table->index('c_from');
             $table->index('c_to');
         });
