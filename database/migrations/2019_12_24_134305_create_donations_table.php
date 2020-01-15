@@ -14,22 +14,22 @@ class CreateDonationsTable extends Migration
     public function up()
     {
         Schema::create('donations', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('donation_id')->unique();
-            $table->string('d_id');
+            $table->string('donor_id');
             $table->unsignedBigInteger('center_id');
-            $table->string('pe_id');
-            $table->unsignedBigInteger('ls_id');
-            $table->string('bb_id');
+            $table->string('pre_exam_id');
+            $table->unsignedBigInteger('lab_scientist_id');
+            $table->string('blood_bag_id');
             $table->decimal('amount_donated_cc', 5, 2);
             $table->date('donation_date');
             $table->timestamps();
 
-            $table->primary('donation_id');
-            $table->index('d_id');
-            $table->index('pe_id');
-            $table->index('ls_id');
+            $table->index('donor_id');
+            $table->index('pre_exam_id');
+            $table->index('lab_scientist_id');
             $table->index('center_id');
-            $table->index('bb_id');
+            $table->index('blood_bag_id');
         });
     }
 

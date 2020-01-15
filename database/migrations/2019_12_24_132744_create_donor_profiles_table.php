@@ -15,7 +15,7 @@ class CreateDonorProfilesTable extends Migration
     {
         Schema::create('donor_profiles', function (Blueprint $table) {
             $table->bigIncrements('id')->unique();
-            $table->string('d_id');
+            $table->string('donor_id');
             $table->string('blood_type');
             $table->string('email');
             $table->string('phone');
@@ -25,7 +25,7 @@ class CreateDonorProfilesTable extends Migration
             $table->string('landmark');
             $table->timestamps();
 
-            $table->index('d_id');
+            $table->index('donor_id');
         });
     }
 

@@ -14,6 +14,7 @@ class CreateDonorsTable extends Migration
     public function up()
     {
         Schema::create('donors', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('d_id')->unique();
             $table->string('first_name');
             $table->string('last_name');
@@ -21,8 +22,6 @@ class CreateDonorsTable extends Migration
             $table->char('gender', 1);
             $table->string('password')->nullable();
             $table->timestamps();
-
-            $table->primary('d_id');
         });
     }
 
