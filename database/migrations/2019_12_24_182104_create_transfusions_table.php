@@ -16,10 +16,10 @@ class CreateTransfusionsTable extends Migration
         Schema::create('transfusions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('t_id')->unique();
-            $table->string('patient_id');
-            $table->string('pre_exam_id');
+            $table->unsignedBigInteger('patient_id');
+            $table->unsignedBigInteger('pre_exam_id');
             $table->unsignedBigInteger('center_id');
-            $table->string('blood_bag_id');
+            $table->unsignedBigInteger('blood_bag_id');
             $table->unsignedBigInteger('lab_scientist_id');
             $table->decimal('amount_recieved_cc', 5, 2);
             $table->date('transfusion_date');

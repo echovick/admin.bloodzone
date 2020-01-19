@@ -15,14 +15,13 @@ class CreateDonorProfilesTable extends Migration
     {
         Schema::create('donor_profiles', function (Blueprint $table) {
             $table->bigIncrements('id')->unique();
-            $table->string('donor_id');
-            $table->string('blood_type');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('state');
-            $table->string('city');
-            $table->string('address');
-            $table->string('landmark');
+            $table->unsignedBigInteger('donor_id');
+            $table->string('blood_type')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('address')->nullable();
+            $table->string('landmark')->nullable();
             $table->timestamps();
 
             $table->index('donor_id');

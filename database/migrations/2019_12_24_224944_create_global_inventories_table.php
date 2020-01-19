@@ -15,8 +15,8 @@ class CreateGlobalInventoriesTable extends Migration
     {
         Schema::create('global_inventories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('blood_bag_id');
-            $table->string('center_id');
+            $table->unsignedBigInteger('blood_bag_id');
+            $table->unsignedBigInteger('center_id');
             $table->boolean('available');
             $table->decimal('price', 8, 2);
             $table->timestamps();
