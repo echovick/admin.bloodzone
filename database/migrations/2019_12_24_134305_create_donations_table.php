@@ -16,11 +16,11 @@ class CreateDonationsTable extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('donation_id')->unique();
-            $table->string('donor_id');
+            $table->unsignedBigInteger('donor_id');
             $table->unsignedBigInteger('center_id');
-            $table->string('pre_exam_id');
+            $table->unsignedBigInteger('pre_exam_id');
             $table->unsignedBigInteger('lab_scientist_id');
-            $table->string('blood_bag_id');
+            $table->unsignedBigInteger('blood_bag_id');
             $table->decimal('amount_donated_cc', 5, 2);
             $table->date('donation_date');
             $table->timestamps();

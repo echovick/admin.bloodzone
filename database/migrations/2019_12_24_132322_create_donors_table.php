@@ -19,6 +19,7 @@ class CreateDonorsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('date_of_birth');
+            $table->string('email');
             $table->char('gender', 1);
             $table->string('password')->nullable();
             $table->timestamps();
