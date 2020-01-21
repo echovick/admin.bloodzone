@@ -16,6 +16,7 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('p_id')->unique();
+            $table->unsignedBigInteger('center_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->date('date_of_birth');
@@ -23,6 +24,7 @@ class CreatePatientsTable extends Migration
             $table->string('need_status');
             $table->timestamps();
 
+            $table->index('center_id');
         });
     }
 
