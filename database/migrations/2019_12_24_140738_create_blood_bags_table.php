@@ -16,7 +16,6 @@ class CreateBloodBagsTable extends Migration
         Schema::create('blood_bags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('bb_id')->unique();
-            $table->unsignedBigInteger('lab_scientist_id');
             $table->unsignedBigInteger('center_id');
             $table->string('donation_type');
             $table->decimal('quantity_cc', 5, 2);
@@ -25,7 +24,6 @@ class CreateBloodBagsTable extends Migration
             $table->timestamps();
 
             $table->index('center_id');
-            $table->index('lab_scientist_id');
 
 
         });
