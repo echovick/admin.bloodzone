@@ -17,6 +17,7 @@ class CreateBloodBagsTable extends Migration
             $table->bigIncrements('id');
             $table->string('bb_id')->unique();
             $table->unsignedBigInteger('center_id');
+            $table->unsignedBigInteger('global_inventory_id');
             $table->string('donation_type');
             $table->decimal('quantity_cc', 5, 2);
             $table->string('blood_type');
