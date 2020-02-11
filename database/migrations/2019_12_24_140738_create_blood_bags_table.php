@@ -25,6 +25,7 @@ class CreateBloodBagsTable extends Migration
             $table->timestamps();
 
             $table->index('center_id');
+            $table->index('global_inventory_id');
 
 
         });
