@@ -14,14 +14,20 @@ class CreateBloodBagsTable extends Migration
     public function up()
     {
         Schema::create('blood_bags', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('bb_id')->unique();
+            $table->unsignedBigInteger('center_id');
+            $table->unsignedBigInteger('global_inventory_id');
             $table->string('donation_type');
             $table->decimal('quantity_cc', 5, 2);
             $table->string('blood_type');
             $table->date('expiry_date');
             $table->timestamps();
 
-            $table->primary('bb_id');
+            $table->index('center_id');
+            $table->index('global_inventory_id');
+
+
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDonationsTable extends Migration
+class CreateBloodBagOrderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,18 @@ class CreateDonationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('donations', function (Blueprint $table) {
+        Schema::create('blood_bag_order', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('donation_id')->unique();
-            $table->unsignedBigInteger('donor_id');
-            $table->unsignedBigInteger('center_id');
-            $table->unsignedBigInteger('pre_exam_id');
+
+            $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('lab_scientist_id');
-            $table->unsignedBigInteger('blood_bag_id');
-            $table->decimal('amount_donated_cc', 5, 2);
-            $table->date('donation_date');
+            $table->unsignedBigInteger('center_id');
+            $table->string('status')->default('pending payment');
+            $table->unsignedBigInteger('blood_bag_id');            
+            
             $table->timestamps();
 
-            $table->index('donor_id');
-            $table->index('pre_exam_id');
+            $table->index('order_id');
             $table->index('lab_scientist_id');
             $table->index('center_id');
             $table->index('blood_bag_id');
@@ -40,6 +38,6 @@ class CreateDonationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donations');
+        Schema::dropIfExists('blood_bag_order');
     }
 }
