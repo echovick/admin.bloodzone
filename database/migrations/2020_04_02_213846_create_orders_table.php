@@ -31,6 +31,8 @@ class CreateOrdersTable extends Migration
             $table->double('total');
             $table->integer('tax');
             $table->integer('num_of_items');
+            $table->string('paystack_ref_number')->nullable();
+            $table->boolean('paid')->default(false);
 
             $table->timestamps();
 
