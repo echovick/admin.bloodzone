@@ -23,11 +23,13 @@ class CreateCentersTable extends Migration
             $table->string('email')->unique();
             $table->string('state');
             $table->string('city');
+            $table->string('bank');
+            $table->string('account_number');
+            $table->string('account_name');
             $table->string('landmark')->nullable();
             $table->string('license');
             $table->string('status')->default('Pending Verification');
             $table->timestamps();
-
         });
     }
 
