@@ -4,7 +4,7 @@ namespace Deployer;
 require 'recipe/laravel.php';
 
 // Project name
-set('application', 'Bloodzone Admin');
+set('application', 'Bloodzone-Admin');
 
 // Project repository
 set('repository', 'git@github.com:Rozzae/admin.bloodzone.git');
@@ -24,10 +24,11 @@ add('writable_dirs', []);
 
 host('178.128.42.20')
     ->user('deployer')
-    ->identityFile("C:/Users/OSITA SILAS/.ssh/deployerkey.pub")
+    ->identityFile('~/.ssh/deployerkey')
     ->set('deploy_path', '/var/www/html/admin.bloodzoneng.com');    
     
-// Tasks
+
+    // Tasks
 
 task('build', function () {
     run('cd {{release_path}} && build');
