@@ -24,7 +24,7 @@ add('writable_dirs', []);
 
 host('178.128.42.20')
     ->user('deployer')
-    ->identityFile('C:/Users/OSITA SILAS/.ssh/deployerkey')
+    ->identityFile("C:/Users/OSITA SILAS/.ssh/deployerkey.pub")
     ->set('deploy_path', '/var/www/html/admin.bloodzoneng.com');    
     
 // Tasks
