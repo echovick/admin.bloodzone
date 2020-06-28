@@ -23,7 +23,7 @@ add('writable_dirs', []);
 // Hosts
 
 host('178.128.42.20')
-    ->ussr('deployer')
+    ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
     ->set('deploy_path', '/var/www/html/admin.bloodzoneng.com');    
     
