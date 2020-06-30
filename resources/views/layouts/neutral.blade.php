@@ -22,11 +22,6 @@
 </head>
 
 <body>
-    <script>
-        window.onbeforeunload = function() {
-          return "Are you sure";
-        };
-      </script>    
     <div id="app">
         <main class="py-4">
             @yield('content')
