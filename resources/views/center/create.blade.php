@@ -129,6 +129,66 @@
                     </div>
                 </div>
 
+                <hr>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        {{ __('Bank') }}
+                        <select id="bank" type="text" class="form-control @error('bank') is-invalid @enderror"
+                            name="bank" required autocomplete="bank" autofocus>
+                            <option value="Access Bank">Access Bank Plc</option>
+                            <option value="Fideity Bank">Fidelity Bank Plc</option>
+                            <option value="FCMB">First City Monument Bank Limited</option>
+                            <option value="First Bank">First Bank of Nigeria Limited</option>
+                            <option value="GTbank">Guaranty Trust Bank Plc</option>
+                            <option value="Union bank">Union Bank of Nigeria Plc</option>
+                            <option value="UBA">United Bank for Africa Plc</option>
+                            <option value="Zenith Bank">Zenith Bank Plc</option>
+                            <option value="Vitibank">Citibank Nigeria Limited</option>
+                            <option value="Ecobank">Ecobank Nigeria Plc</option>    
+                            <option value="Heritage Bank">Heritage Banking Company Limited</option>
+                            <option value="Keystone Bank">Keystone Bank Limited</option>
+                            <option value="Polaris Bnak">Polaris Bank Limited.</option>
+                            <option value="Stanbic">Stanbic IBTC Bank Plc</option>
+                            <option value="Standard Chartared">Standard Chartered</option>
+                            <option value="Sterling Bank">Sterling Bank Plc</option>
+                            <option value="Titan Bank">Titan Trust Bank Limited</option>
+                            <option value="Unity Bank">Unity Bank Plc</option>
+                            <option value="Wema Bank">Wema Bank Plc</option>
+                        </select>
+
+                        @error('bank')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="col-md-6">
+                        {{ __('Account Number') }}
+                        <input id="account_no" type="number" class="form-control @error('account_no') is-invalid @enderror"
+                            name="account_no" value="{{ old('account_no') }}" min-lenght="5" max-lenght="10" required autocomplete="account_no" autofocus>
+
+                        @error('account_no')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        {{ __('Account Name') }}
+                        <input id="account_name" type="text" class="form-control @error('account_name') is-invalid @enderror"
+                            name="account_name" value="{{ old('account_name') }}" required autocomplete="account_name" autofocus>
+
+                        @error('account_name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+
                 <div class="form-group row mb-0">
                     <button type="submit" class="btn btn-block btn-primary">
                         {{ __('Register') }}

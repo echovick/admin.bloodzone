@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 //STORE ROUTES
 Route::post('/c', 'CenterController@store');
