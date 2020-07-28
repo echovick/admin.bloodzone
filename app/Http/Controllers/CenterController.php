@@ -7,12 +7,6 @@ use Illuminate\Support\Facades\Hash;
 
 class CenterController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     public function create(){
         return view('center.create');
     }
@@ -59,7 +53,7 @@ class CenterController extends Controller
             'license' => $imagePath,
             'status' => '',
         ]);
-        
+
         return redirect('/c/register');
     }
 }
