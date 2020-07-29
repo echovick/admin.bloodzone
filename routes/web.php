@@ -34,10 +34,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/u/register', 'UserController@create');
 
     //SHOW ROUTES
-    Route::get('/centers', 'CenterController@show');
+    Route::get('/centers', 'CenterController@index');
     Route::get('/admins', 'UserController@index');
     Route::get('/appointments', 'AppointmentController@show');
-    Route::get('/bloodbags', 'BloodBagController@show');
+    Route::get('/bloodbags', 'BloodBagController@index');
     Route::get('/donations', 'DonationController@show');
     Route::get('/donors', 'DonorController@show');
     Route::get('/inventory', 'InventoryController@show');

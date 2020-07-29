@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Center;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,6 +14,11 @@ class CenterController extends Controller
 
     public function show(){
         return view('center.show');
+    }
+
+    public function index(Center $center){
+        $centers = $center->all();
+        return view('center.index', compact('centers'));
     }
 
     public function store(){
