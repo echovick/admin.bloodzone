@@ -40,6 +40,15 @@ function clearText() {
     $('input, select, textarea').removeClass('is-invalid');
 }
 
+function showPasswordText(ele) {
+    let x = $(ele).siblings('input');
+        // x = $(ele).siblings('input')[0];
+    if (x.attr('type') === 'password')
+        x.attr('type', 'text');
+    else
+        x.attr('type', 'password');
+}
+
 function formAttr(_form) {
     let ele = $(_form)[0].elements,
         form = '#' + $(_form).attr('id');
@@ -57,6 +66,7 @@ function hideMessage(element) {
         $('.remove', this).on('click', function (e) {
             e.preventDefault();
             $(this).fadeOut();
+            dynamicFooter();
         });
     });
 }
@@ -71,6 +81,7 @@ function hideFeedBack(element, form) {
             $(this).fadeOut();
             $('.valid-feedback').fadeOut();
             $(_form + ' input, ' + _form + ' select').removeClass('is-valid').removeClass('is-invalid');
+            dynamicFooter();
         });
     });
 }
@@ -104,12 +115,6 @@ dynamicFooter();
 /*<=====================/ *** End of General Functions *** /=====================>*/
 
 
-// Function to fadeout element on click
-function fadeOutOnClick(element) {
-    $(element).on('click', function (e) {
-        e.preventDefault();
-        $(this).fadeOut(function () {
-            dynamicFooter();
-        });
-    });
-}
+$('.nav-tabs a').on('shown.bs.tab', function(){
+    dynamicFooter();
+});

@@ -19,6 +19,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- font-awesome -->
+    <link href="{{ asset('fonts/css/all.min.css') }}" rel="stylesheet" type="text/css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -37,60 +40,64 @@
                                 {{ __('Bloodzone Admin Login') }}
                             </div>
                             @if (Auth::user())
-                            <div class="card-body">
-                                <div class="col-md-12">
-                                    <a href="\home" class="btn btn-block btn-danger text-light">
-                                        {{ __('Back To Dashboard') }}
-                                    </a>
+                                <div class="card-body">
+                                    <div class="col-md-12">
+                                        <a href="\home" class="btn btn-block btn-danger text-light">
+                                            {{ __('Back To Dashboard') }}
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
                             @else
-                            <div class="card-body">
-                                <form method="POST" action="{{ route('login') }}">
-                                    @csrf
-                                    <div class="form-group row">
-                                        <div class="col-md-12">
-                                            <input id="admin_id" type="text" placeholder="Admin ID"
-                                                class="form-control form-control @error('admin_id') is-invalid @enderror"
-                                                name="admin_id" value="{{ old('admin_id') }}" required
-                                                autocomplete="admin_id" autofocus>
+                                <div class="card-body">
+                                    <form method="POST" action="{{ route('login') }}">
+                                        @csrf
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <input id="admin_id" type="text" placeholder="Admin ID"
+                                                       class="form-control form-control-sm @error('admin_id') is-invalid @enderror"
+                                                       name="admin_id" value="{{ old('admin_id') }}" required
+                                                       autocomplete="admin_id" autofocus>
 
-                                            @error('admin_id')
-                                            <span class="invalid-feedback" role="alert">
+                                                @error('admin_id')
+                                                <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                            @enderror
+                                                @enderror
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group row">
-                                        <div class="col-md-12">
-                                            <input id="password" type="password" placeholder="Password"
-                                                class="form-control form-control @error('password') is-invalid @enderror"
-                                                name="password" required autocomplete="current-password">
-
-                                            @error('password')
-                                            <span class="invalid-feedback" role="alert">
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <div class="position-relative">
+                                                    <input id="password" type="password" placeholder="Password"
+                                                           class="form-control form-control-sm @error('password') is-invalid @enderror"
+                                                           name="password" required autocomplete="current-password">
+                                                    <a type="button" title="show password text" class="show-password position-absolute" style="z-index: 100;right: 5px;top: 5px;font-size: 14px">
+                                                        <i class="fas fa-eye text-muted"></i>
+                                                    </a>
+                                                </div>
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                            @enderror
+                                                @enderror
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group row mb-0">
-                                        <div class="col-md-12">
-                                            <button type="submit" class="btn btn-block btn-danger">
-                                                {{ __('Login') }}
-                                            </button>
-                                            @if (Route::has('password.request'))
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
-                                            @endif
+                                        <div class="form-group row mb-0">
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-block btn-danger">
+                                                    {{ __('Login') }}
+                                                </button>
+                                                @if (Route::has('password.request'))
+                                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                        {{ __('Forgot Your Password?') }}
+                                                    </a>
+                                                @endif
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>
+                                    </form>
+                                </div>
                             @endif
                         </div>
                     </div>
@@ -99,5 +106,12 @@
         </main>
     </div>
 </body>
+
+<!-- Core plugin JavaScript-->
+<script src="{{ asset('jquery/jquery-3.4.1.min.js') }}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('js/user.js') }}"></script>
 
 </html>

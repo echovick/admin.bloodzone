@@ -178,4 +178,10 @@ $(function () {
             mess_tag = formAttr(form)['form'] + ' #mess';
         editAdminSecurity(form, that, mess_tag);
     });
+
+    /**======== Misc. ========**/
+    $('.show-password').on('click', function (e) {
+        e.preventDefault();
+        showPasswordText(this);
+    });
 });
