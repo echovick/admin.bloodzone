@@ -14,10 +14,10 @@
     <link rel="icon" href="{{ asset('images/Bloodzoneicon.png') }}">
 
     <!-- Scripts -->
-    {{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
-    <script src="{{ asset('jquery/jquery.min.js') }}" defer></script>
+{{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
+{{--<script src="{{ asset('jquery/jquery-3.4.1.min.js') }}"></script>--}}
 
-    <!-- Custom styles for this page -->
+<!-- Custom styles for this page -->
     <link href="{{ asset('datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
     <!-- font-awesome -->
@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 
 </head>
+
+<div id="data" data-user-id="{{ auth()->id() }}" data-admin-id="{{ auth()->user()->admin_id }}" hidden></div>
 
 <body id="page-top">
     <!-- Page Wrapper -->
@@ -354,18 +356,19 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    {{--    </div>--}}
-    {{--   <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>--}}
-    <script src="{{ asset('jquery/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('jquery/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('jquery/jquery.form.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/user.js') }}"></script>
 
     <!-- Page level plugins -->
     <script src="{{ asset('chart.js/Chart.min.js') }}"></script>

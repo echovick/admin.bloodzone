@@ -13,7 +13,7 @@ class UserController extends Controller
         return view('admin.create');
     }
 
-    public function show(User $user)
+    public function index(User $user)
     {
         $users = $user->all();
         return view('admin.show', compact('users'));

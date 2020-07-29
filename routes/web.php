@@ -21,7 +21,10 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-Route::middleware(['auth'])->group(function (){
+Route::middleware(['auth'])->group(function () {
+    // PATCH ROUTES
+    Route::patch('/admin/{admin}', 'ProfileController@update')->name('admin.update');
+
     //STORE ROUTES
     Route::post('/c', 'CenterController@store');
     Route::post('/u', 'UserController@store');
@@ -32,7 +35,7 @@ Route::middleware(['auth'])->group(function (){
 
     //SHOW ROUTES
     Route::get('/centers', 'CenterController@show');
-    Route::get('/admins', 'UserController@show');
+    Route::get('/admins', 'UserController@index');
     Route::get('/appointments', 'AppointmentController@show');
     Route::get('/bloodbags', 'BloodBagController@show');
     Route::get('/donations', 'DonationController@show');
@@ -45,5 +48,5 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/transfusions', 'TransfusionController@show');
 
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/profile', 'ProfileController@show')->name('home');
+    Route::get('/profile', 'ProfileController@show')->name('home')->name('admin.show');
 });

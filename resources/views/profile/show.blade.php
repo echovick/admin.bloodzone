@@ -15,29 +15,187 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs nav-justified" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#home">Bio</a>
+                <a class="nav-link active" data-toggle="tab" href="#account">Account</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#menu1">Account</a>
+                <a class="nav-link" data-toggle="tab" href="#security">Security</a>
             </li>
-            <li class="nav-item">
+            {{--<li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#menu2">Password</a>
-            </li>
+            </li>--}}
         </ul>
 
         <!-- Tab panes -->
-        <div class="tab-content">
-            <div id="home" class="container tab-pane active"><br>
-                <h3>Bio Info</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="tab-content shadow-sm pb-2">
+            <div id="account" class="container tab-pane active"><br>
+                {{--<h3>Account</h3>--}}
+                <form method="POST" action="{{ route('admin.update', auth()->id()) }}" id="edit-admin-account">
+                    @csrf
+                    @method('patch')
+
+                    <div class="form-group row text-sm">
+                        <div class="col-md-6">
+                            <label for="admin_id">{{ __('Admin Id') }}</label>
+                            <input id="admin_id" type="text"
+                                   class="form-control form-control-sm @error('admin_id') is-invalid @enderror" name="admin_id"
+                                   value="{{ auth()->user()->admin_id }}" autocomplete="admin_id" readonly>
+
+                            {{--<span id="admin_idValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>--}}
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="first_name">{{ __('First Name') }}</label>
+                            <input id="first_name" type="text"
+                                   class="form-control form-control-sm @error('first_name') is-invalid @enderror"
+                                   name="first_name" value="{{ auth()->user()->first_name }}" autocomplete="first_name"
+                                   autofocus>
+
+                            <span id="first_nameValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="last_name">{{ __('Last Name') }}</label>
+                            <input id="last_name" type="text"
+                                   class="form-control form-control-sm @error('last_name') is-invalid @enderror"
+                                   name="last_name" value="{{ auth()->user()->last_name }}" autocomplete="last_name" autofocus>
+
+                            <span id="last_nameValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="date_of_birth">{{ __('Date Of Birth') }}</label>
+                            <input id="date_of_birth" type="date"
+                                   class="form-control form-control-sm @error('date_of_birth') is-invalid @enderror"
+                                   name="date_of_birth" value="{{ auth()->user()->date_of_birth }}"
+                                   autocomplete="date_of_birth" autofocus>
+
+                            <span id="date_of_birthValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="gender">{{ __('Gender') }}</label>
+                            <select id="gender" type="text"
+                                    class="form-control form-control-sm @error('gender') is-invalid @enderror" name="gender"
+                                    autocomplete="gender" autofocus>
+                                <option value="" disabled>Select Gender</option>
+                                <option value="M" @if(auth()->user()->gender == 'M') selected @endif>Male</option>
+                                <option value="F" @if(auth()->user()->gender == 'F') selected @endif>Female</option>
+                            </select>
+
+                            <span id="genderValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email">{{ __('E-Mail Address') }}</label>
+                            <input id="email" type="email"
+                                   class="form-control form-control-sm @error('email') is-invalid @enderror" name="email"
+                                   value="{{ auth()->user()->email }}" autocomplete="email">
+
+                            <span id="emailValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label for="phone">{{ __('Phone') }}</label>
+                            <input id="phone" type="text"
+                                   class="form-control form-control-sm @error('phone') is-invalid @enderror" name="phone"
+                                   value="{{ auth()->user()->phone }}" autocomplete="phone" autofocus>
+
+                            <span id="phoneValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="address">{{ __('Address') }}</label>
+                            <input id="address" type="text"
+                                   class="form-control form-control-sm @error('address') is-invalid @enderror" name="address"
+                                   value="{{ auth()->user()->address }}" autocomplete="address" autofocus>
+
+                            <span id="addressValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-12 text-md-center">
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                {{ __('Save Changes') }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group row my-2">
+                        <div id="mess" class="col-12" style="display: none;">
+                            <i class="text-danger fa fa-exclamation-circle"></i> <span class="text-primary">Please Wait...</span>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div id="menu1" class="container tab-pane fade"><br>
-                <h3>Account Info</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div id="menu2" class="container tab-pane fade"><br>
-                <h3>Password</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+
+            <div id="security" class="container tab-pane fade"><br>
+                <form method="POST" action="{{ route('admin.update', auth()->id()) }}" id="edit-admin-security">
+                    @csrf
+                    @method('patch')
+
+                    <div class="form-group row text-sm">
+                        <div class="col-md-12">
+                            <label for="current-password">{{ __('Current Password') }}</label>
+                            <input id="current-password" type="password"
+                                   class="form-control @error('password') is-invalid @enderror" name="current-password"
+                                   autocomplete="new-password">
+
+                            <span id="current-passwordValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row text-sm">
+                        <div class="col-md-12">
+                            <label for="password">{{ __('New Password') }}</label>
+                            <input id="password" type="password"
+                                   class="form-control @error('password') is-invalid @enderror" name="password"
+                                   autocomplete="new-password">
+
+                            <span id="passwordValid" class="invalid-feedback" role="alert">
+                                <strong></strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-12 text-md-center">
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                {{ __('Save Changes') }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group row my-2">
+                        <div id="mess" class="col-12" style="display: none;">
+                            <i class="text-danger fa fa-exclamation-circle"></i> <span class="text-primary">Please Wait...</span>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
