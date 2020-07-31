@@ -147,7 +147,9 @@ return [
     */
 
     'attributes' => [
-        'current-password' => 'Current Password'
+        'email' => 'E-Mail Address',
+        'phone_1' => 'Phone Number',
+        'current-password' => 'Current Password',
     ],
 
 ];

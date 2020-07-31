@@ -134,7 +134,7 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="mb-5 pb-4">
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <!-- Sidebar Toggle (Topbar) -->
@@ -337,18 +337,18 @@
                     </ul>
                 </nav>
                 <!-- End of Topbar -->
-            @yield('content')
-            <!-- Footer -->
-                <footer class="sticky-footer bg-white mt-5">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; BloodZone 2019</span>
-                        </div>
-                    </div>
-                </footer>
+                @yield('content')
             </div>
-            <!-- End of Footer -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white mt-5">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; BloodZone 2019</span>
+                    </div>
+                </div>
+            </footer>
         </div>
+        <!-- End of Footer -->
     </div>
 
     <!-- End of Page Wrapper -->
@@ -356,33 +356,33 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('jquery/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('jquery-easing/jquery.easing.min.js') }}"></script>
-    <script src="{{ asset('jquery/jquery.form.min.js') }}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="{{ asset('js/user.js') }}"></script>
-
-    <!-- Page level plugins -->
-    <script src="{{ asset('chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
-    <!--  -->
-    <!-- Page level plugins for tables-->
-    <script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('datatables/dataTables.bootstrap4.min.js') }}"></script>
-
-    <!-- Page level custom scripts for tables-->
-    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 </body>
+<!-- Bootstrap core JavaScript-->
+<script src="{{ asset('jquery/jquery-3.4.1.min.js') }}"></script>
+<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{{ asset('jquery-easing/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('jquery/jquery.form.min.js') }}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+<script src="{{ asset('js/user.js') }}"></script>
+
+<!-- Page level plugins -->
+<script src="{{ asset('chart.js/Chart.min.js') }}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
+<script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+<!--  -->
+<!-- Page level plugins for tables-->
+<script src="{{ asset('datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- Page level custom scripts for tables-->
+<script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+@yield('scripts')
 
 </html>
