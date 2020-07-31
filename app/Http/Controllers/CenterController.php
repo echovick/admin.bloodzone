@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Center;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class CenterController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     public function create(){
         return view('center.create');
     }
 
     public function show(){
         return view('center.show');
+    }
+
+    public function index(Center $center){
+        $centers = $center->all();
+        return view('center.index', compact('centers'));
     }
 
     public function store(){
@@ -59,7 +59,7 @@ class CenterController extends Controller
             'license' => $imagePath,
             'status' => '',
         ]);
-        
+
         return redirect('/c/register');
     }
 }

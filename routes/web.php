@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -18,26 +21,32 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-//STORE ROUTES
-Route::post('/c', 'CenterController@store');
-Route::post('/u', 'UserController@store');
+Route::middleware(['auth'])->group(function () {
+    // PATCH ROUTES
+    Route::patch('/admin/{admin}', 'ProfileController@update')->name('admin.update');
 
-//CREATE ROUTES
-Route::get('/c/register', 'CenterController@create');
-Route::get('/u/register', 'UserController@create');
+    //STORE ROUTES
+    Route::post('/c', 'CenterController@store');
+    Route::post('/u', 'UserController@store');
 
-//SHOW ROUTES
-Route::get('/centers', 'CenterController@show');
-Route::get('/admins', 'UserController@show');
-Route::get('/appointments', 'AppointmentController@show');
-Route::get('/bloodbags', 'BloodBagController@show');
-Route::get('/donations', 'DonationController@show');
-Route::get('/donors', 'DonorController@show');
-Route::get('/inventory', 'InventoryController@show');
-Route::get('/labscientists', 'LabScientistController@show');
-Route::get('/patients', 'PatientController@show');
-Route::get('/preexams', 'PreExamController@show');
-Route::get('/transactions', 'TransactionController@show');
-Route::get('/transfusions', 'TransfusionController@show');
+    //CREATE ROUTES
+    Route::get('/c/register', 'CenterController@create');
+    Route::get('/u/register', 'UserController@create');
 
-Route::get('/home', 'HomeController@index')->name('home');
+    //SHOW ROUTES
+    Route::get('/centers', 'CenterController@index');
+    Route::get('/admins', 'UserController@index');
+    Route::get('/appointments', 'AppointmentController@show');
+    Route::get('/bloodbags', 'BloodBagController@index');
+    Route::get('/donations', 'DonationController@show');
+    Route::get('/donors', 'DonorController@show');
+    Route::get('/inventory', 'InventoryController@show');
+    Route::get('/labscientists', 'LabScientistController@show');
+    Route::get('/patients', 'PatientController@show');
+    Route::get('/preexams', 'PreExamController@show');
+    Route::get('/transactions', 'TransactionController@show');
+    Route::get('/transfusions', 'TransfusionController@show');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/profile', 'ProfileController@show')->name('home')->name('admin.show');
+});

@@ -26,10 +26,10 @@
                             <div class="d-flex">
                                 <div style="font-size:11px;">
                                     <a class="text-dark" href="#" style="text-decoration:none;">
-                                        <b>BloodBag</b>: BB1901 <br>
-                                        <b>Type</b>: Blood <br>
-                                        <b>Quantity (cc)</b>: 546 <br>
-                                        <b>Expires</b>: 21-03-2020 <br>
+                                        <b>BloodBag</b>: {{ $bloodBag->bb_id }} <br>
+                                        <b>Type</b>: {{ $bloodBag->blood_type }} <br>
+                                        <b>Quantity (cc)</b>: {{ $bloodBag->quantity_cc }} <br>
+                                        <b>Expires</b>: {{ $bloodBag->expiry_date }} <br>
                                     </a>
                                 </div>
                             </div>
