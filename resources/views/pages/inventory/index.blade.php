@@ -11,14 +11,14 @@
             <h1 class="h3 mb-0 text-gray-800">Inventory</h1>
         </div>
         <div class="row mb-4">
-            @forelse($invntories as $inventory)
+            @forelse($bloodBags as $bloodBag)
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-danger shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
                                     <div class="text-lg font-weight-bold text-danger text-uppercase mb-1">
-                                        A+
+                                        {{ $bloodBag->blood_type }}
                                     </div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
                                         681 Unit(s)

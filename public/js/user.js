@@ -70,6 +70,46 @@ $(function () {
         if (mess) message(danger_rem_class, fa_exc, mess, mess_tag);
     }
 
+    /**** i. Functions for Adding / Creating ****/
+    function createCenter(form, that) {
+        $(mess_tag).html(mess).fadeIn();
+        if (requested) {
+            return;
+        }
+        requested = true;
+
+        setTimeout(function () {
+            $(form).ajaxSubmit({
+                url: formAction(form),
+                method: 'post',
+                data: {
+                    // action: 'update-account',
+                    _token: csrf_token
+                },
+                dataType: 'json',
+                complete: function (xhr) {
+                    let resp = xhr.responseJSON,
+                        status = xhr.status,
+                        error = resp.errors,
+                        mess = resp.message;
+
+                    clearText();
+                    if (status === 200) {
+                        message(success_cont_class, fa_check, 'Center has been added successfully!!!<br /><i class="fa fa-spin fa-spinner"></i> Please Wait...', mess_tag);
+                    } else {
+                        if (status === 500) {
+                            message(danger_rem_class, fa_exc, 'Oops that was from us...Please contact us if this continues<br /><small>Click to dismiss</small>', mess_tag)
+                            return;
+                        }
+                        displayError(formAttr(form)['form'], that, error, mess + '<br /><small>Click to dismiss</small>', mess_tag);
+                    }
+                    hideFeedBack($(mess_tag), form);
+                }
+            });
+            requested = false;
+        }, 800);
+    }
+
     /**** ii. Functions for Editing / Patching ****/
     function editAdminAccount(form, that) {
         $(mess_tag).html(mess).fadeIn();
@@ -142,15 +182,12 @@ $(function () {
                             displayError(formAttr(form)['form'], that, error, mess + '<br /><small>Click to dismiss</small>', mess_tag);
                             return;
                         }
-
                         message(success_rem_class, fa_check, 'Password successfully updated!!!<br /><small>Click to dismiss</small>', mess_tag);
-                    } else {
-                        if (status === 500) {
-                            message(danger_rem_class, fa_exc, 'Oops that was from us...Please contact us if this continues<br /><small>Click to dismiss</small>', mess_tag)
-                            return;
-                        }
-                        displayError(formAttr(form)['form'], that, error, mess + '<br /><small>Click to dismiss</small>', mess_tag);
+                    } else if (status === 500) {
+                        message(danger_rem_class, fa_exc, 'Oops that was from us...Please contact us if this continues<br /><small>Click to dismiss</small>', mess_tag)
+                        return;
                     }
+                    displayError(formAttr(form)['form'], that, error, mess + '<br /><small>Click to dismiss</small>', mess_tag);
                     hideFeedBack($(mess_tag), form);
                 }
             });
@@ -162,6 +199,14 @@ $(function () {
     /**------------------------------------------------**/
     /****************** Function Calls ******************/
     /**------------------------------------------------**/
+
+    /**======== Create ========**/
+    $('#create-center-form').on('submit', function (e) {
+        e.preventDefault();
+        let form = this,
+            that = formAttr(this)['that'];
+        createCenter(form, that);
+    });
 
     /**======== Edit ========**/
     $('#edit-admin-account').on('submit', function (e) {

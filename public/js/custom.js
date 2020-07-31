@@ -42,7 +42,7 @@ function clearText() {
 
 function showPasswordText(ele) {
     let x = $(ele).siblings('input');
-        // x = $(ele).siblings('input')[0];
+    // x = $(ele).siblings('input')[0];
     if (x.attr('type') === 'password')
         x.attr('type', 'text');
     else
@@ -59,7 +59,7 @@ function formAttr(_form) {
     }
 }
 
-// Function to hides form messages on click
+// Function to hide form messages on click
 function hideMessage(element) {
     element.mouseenter(function (e) {
         e.preventDefault();
@@ -71,7 +71,7 @@ function hideMessage(element) {
     });
 }
 
-// Function to hides form messages on click
+// Function to hide form messages on click
 function hideFeedBack(element, form) {
     let _form = formAttr(form)['form'];
     element.mouseenter(function (e) {
@@ -88,21 +88,21 @@ function hideFeedBack(element, form) {
 
 function dynamicFooter() {
     if ($('html').hasScrollBar()) {
-        console.log('true');
         $('footer').css({
             padding: '2rem 0',
+            left: $('div#wrapper ul#accordionSidebar.navbar-nav').width(),
+            right: '0',
             msFlexNegative: '0',
             flexShrink: 0
         });
 
     } else {
-        console.log('false');
         $('footer').css({
-            position: 'fixed',
-            zIndex: '0',
+            position: 'absolute',
             bottom: '0',
+            left: $('div#wrapper ul#accordionSidebar.navbar-nav').width(),
             right: '0',
-            left: '0'
+            display: 'flex'
         });
     }
 }
@@ -115,6 +115,6 @@ dynamicFooter();
 /*<=====================/ *** End of General Functions *** /=====================>*/
 
 
-$('.nav-tabs a').on('shown.bs.tab', function(){
+$('.nav-tabs a').on('shown.bs.tab', function () {
     dynamicFooter();
 });

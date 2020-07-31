@@ -8,7 +8,7 @@
             </div>
         @endif
         <div class="d-sm-flex align-items-center justify-content-between">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Profile Dashboard</h1>
         </div>
         <hr class="mt-0"/>
 
@@ -161,15 +161,15 @@
                             <label for="current-password">{{ __('Current Password') }}</label>
                             <div class="position-relative">
                                 <input id="current-password" type="password"
-                                       class="form-control form-control-sm @error('password') is-invalid @enderror" name="current-password"
+                                       class="form-control form-control-sm" name="current-password"
                                        autocomplete="new-password">
                                 <a type="button" title="show password text" class="show-password position-absolute" style="z-index: 100;right: 5px;top: 5px;font-size: 14px">
                                     <i class="fas fa-eye text-muted"></i>
                                 </a>
+                                <span id="current-passwordValid" class="invalid-feedback" role="alert">
+                                    <strong></strong>
+                                </span>
                             </div>
-                            <span id="current-passwordValid" class="invalid-feedback" role="alert">
-                                <strong></strong>
-                            </span>
                         </div>
                     </div>
 
@@ -178,15 +178,15 @@
                             <label for="password">{{ __('New Password') }}</label>
                             <div class="position-relative">
                                 <input id="password" type="password"
-                                       class="form-control form-control-sm @error('password') is-invalid @enderror" name="password"
+                                       class="form-control form-control-sm" name="password"
                                        autocomplete="new-password">
                                 <a type="button" title="show password text" class="show-password position-absolute" style="z-index: 100;right: 5px;top: 5px;font-size: 14px">
                                     <i class="fas fa-eye text-muted"></i>
                                 </a>
+                                <span id="passwordValid" class="invalid-feedback" role="alert">
+                                    <strong></strong>
+                                </span>
                             </div>
-                            <span id="passwordValid" class="invalid-feedback" role="alert">
-                                <strong></strong>
-                            </span>
                         </div>
                     </div>
 

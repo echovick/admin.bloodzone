@@ -35,7 +35,7 @@ class CenterController extends Controller
             'account_no' => '',
             'account_name' => '',
             'landmark' => '',
-            'license' => ['required', 'image'],
+            'license' => ['required', 'image', 'file'],
             'status' => '',
         ]);
 
