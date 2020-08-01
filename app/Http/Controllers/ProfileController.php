@@ -10,7 +10,7 @@ use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
-    private int $status = 300;
+    private $status = 300;
 
     public function show()
     {
