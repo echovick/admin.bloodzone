@@ -10,7 +10,7 @@ use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
-    private $status = 300;
+    public $status = 300;
 
     public function show()
     {
@@ -32,7 +32,7 @@ class ProfileController extends Controller
                 'gender' => ['string', 'nullable'],
                 'email' => ['email', 'min:3', 'nullable', Rule::unique('users')->ignore($admin)],
                 'phone' => ['string', 'min:5', 'max:18', 'nullable'],
-                'address' => ['string', 'nullable']
+                'address' => ['string', 'nullable'],
             ]);
 
             if ($validateUserInfo) {
@@ -44,28 +44,33 @@ class ProfileController extends Controller
                             $this->status = 200;
                         }
                     }
-                } else
+                } else {
                     $message = 'Please fill in at least one field to update!!!';
+                }
+
             }
         } elseif ($request['action'] == 'update-password') {
             $validateUserPassword = $request->validate([
                 'current-password' => ['required', 'string', 'min:3'],
-                'password' => ['required', 'string', 'min:3']
+                'password' => ['required', 'string', 'min:3'],
             ]);
 
             if ($validateUserPassword) {
-                if (Hash::check($request['current-password'], User::where('id', $admin)->firstorFail()->password))
+                if (Hash::check($request['current-password'], User::where('id', $admin)->firstorFail()->password)) {
                     if ($request['current-password'] !== $request['password']) {
                         User::where('id', $admin)->update(['password' => Hash::make($request['password'])]);
                         $this->status = 200;
                     } else {
                         $error['password'] = $attr['password'] . '\'s cannot be the same!!!';
                     }
-                else
+                } else {
                     $error['current-password'] = $attr['current-password'] . ' is incorrect!!!';
+                }
 
-                if ($this->status == 300)
+                if ($this->status == 300) {
                     $message = 'The given data was invalid';
+                }
+
             }
         }
 

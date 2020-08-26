@@ -19,12 +19,14 @@ class CreatePatientsTable extends Migration
             $table->unsignedBigInteger('center_id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('phone');
             $table->date('date_of_birth');
             $table->string('blood_type');
             $table->string('need_status');
             $table->timestamps();
 
             $table->index('center_id');
+            $table->foreign('center_id')->references('id')->on('centers')->onDelete('cascade');
         });
     }
 
