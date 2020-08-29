@@ -31,8 +31,6 @@ class CreatePreExamsTable extends Migration
             $table->timestamps();
 
             $table->index('center_id');
-
-
         });
     }
 

@@ -30,6 +30,7 @@ class CreateDonationsTable extends Migration
             $table->index('lab_scientist_id');
             $table->index('center_id');
             $table->index('blood_bag_id');
+
         });
     }
 
