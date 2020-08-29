@@ -42,8 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/donors', 'DonorController@index');
     Route::get('/inventory', 'InventoryController@index');
     Route::get('/labscientists', 'LabScientistController@show');
-    Route::get('/patients', 'PatientController@show');
-    Route::get('/preexams', 'PreExamController@show');
+    Route::get('/patients', 'PatientController@index');
+    Route::get('/preexams', 'PreExamController@index');
     Route::get('/transactions', 'TransactionController@show');
     Route::get('/transfusions', 'TransfusionController@show');
 
