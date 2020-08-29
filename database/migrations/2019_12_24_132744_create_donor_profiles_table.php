@@ -25,7 +25,6 @@ class CreateDonorProfilesTable extends Migration
             $table->timestamps();
 
             $table->index('donor_id');
-            $table->foreign('donor_id')->references('id')->on('donors')->onDelete('cascade');
         });
     }
 
