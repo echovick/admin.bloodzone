@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-
+            
             $table->unsignedBigInteger('lab_scientist_id');
             $table->integer('order_number')->unique();
             $table->string('shipping_email');
@@ -37,7 +37,7 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
 
             $table->index('lab_scientist_id');
-            $table->foreign('lab_scientist_id')->references('id')->on('lab_scientists')->onDelete('cascade');
+
         });
     }
 

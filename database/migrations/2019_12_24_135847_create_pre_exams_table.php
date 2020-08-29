@@ -31,7 +31,8 @@ class CreatePreExamsTable extends Migration
             $table->timestamps();
 
             $table->index('center_id');
-            $table->foreign('center_id')->references('id')->on('centers')->onDelete('cascade');
+
+
         });
     }
 
